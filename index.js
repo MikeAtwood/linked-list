@@ -117,7 +117,24 @@ const LinkedList = () => {
     }
 
     // returns the index of the node containing value, or null if not found
-    
+    const find = (value) => {
+        if (head === null) {
+            console.log("There's no linked list")
+        } else {
+            let pointer = head
+            let index = 0
+            while (pointer.nextNode !== null) {
+                if (pointer.value === value) {
+                    return index;
+                }
+                index++ // Move index to the next node
+                pointer = pointer.nextNode
+            }
+            if (pointer.value !== value) {
+                console.log("This value cannot be found")
+            } else return index;
+        }
+    }    
 
     return {
         append,
