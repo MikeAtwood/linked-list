@@ -181,3 +181,7 @@ testList.prepend(6)
 
 console.log(testList.size)
 console.log(testList.headNode)
+console.log(testList.at(1));
+console.log(testList.find(10));
+console.log(testList.tail());
+console.log(testList.toString());
