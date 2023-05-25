@@ -1,5 +1,5 @@
 // Factory function for Node
-const Node = (value = null, leftChild = null, rightChild = null) => {
+const Node = (value, leftChild = null, rightChild = null) => {
     return {
         value,
         leftChild,
@@ -9,6 +9,8 @@ const Node = (value = null, leftChild = null, rightChild = null) => {
 
 // TODO: build a tree factory function which accepts an array when initialized
 // Tree Factory Function
-const Tree = () => {
-    
+const Tree = (array) => {
+    return {
+        array
+    }
 }
