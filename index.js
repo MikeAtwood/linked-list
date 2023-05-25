@@ -1,3 +1,4 @@
+// Factory Function
 const nodeList = (value = null, nextNode = null) => {
     return {
         value,
@@ -7,13 +8,15 @@ const nodeList = (value = null, nextNode = null) => {
 
 const LinkedList = () => {
     let head = null
-    let size = 0
+    let length = 0
 
+    // Adds new node at the end of the list
     const append = (value) => {
         const newNode = nodeList(value)
-        
+        // Check if head exists
         if (head === null) {
             head = newNode
+        // If it does, look at the next node in the list
         } else {
             let pointer = head
             while (pointer.nextNode !== null) {
@@ -21,10 +24,10 @@ const LinkedList = () => {
             }
             pointer.nextNode = newNode
         }
-        size++
+        length++
     }
 
-
+    // Adds new node to the start of the list
     const prepend = (value) => {
         const newNode = nodeList(value)
 
@@ -35,12 +38,15 @@ const LinkedList = () => {
             newNode.nextNode = pointer
             head = newNode
         }
-        size++
+        length++
     }
+
+    const size = () => length 
 
     return {
         append,
-        prepend
+        prepend,
+        size
     }
 }
 
