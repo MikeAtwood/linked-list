@@ -116,6 +116,9 @@ const LinkedList = () => {
         }
     }
 
+    // returns the index of the node containing value, or null if not found
+    
+
     return {
         append,
         prepend,
