@@ -11,6 +11,7 @@ const LinkedList = () => {
 
     const append = (value) => {
         const newNode = nodeList(value)
+        
         if (head === null) {
             head = newNode
         } else {
@@ -25,11 +26,21 @@ const LinkedList = () => {
 
 
     const prepend = (value) => {
-        const newNode = nodeList(value, head)
+        const newNode = nodeList(value)
+
+        if(head === null) {
+            head = newNode
+        } else {
+            let pointer = head
+            newNode.nextNode = pointer
+            head = newNode
+        }
+        size++
     }
 
     return {
-        append
+        append,
+        prepend
     }
 }
 
