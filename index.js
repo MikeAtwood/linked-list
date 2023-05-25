@@ -136,6 +136,22 @@ const LinkedList = () => {
         }
     }    
 
+    // Represents your LindedList objects as strings, to print them out in the console
+    const toString = () => {
+        if (head === null) {
+            console.log("There's no linked list")
+        } else {
+            let pointer = head
+            let str = ""
+            while (pointer.nextNode !== null) {
+                str = str + `( ${pointer.value} ) -> `
+                pointer = pointer.nextNode
+            }
+            str = str + `( ${pointer.value} ) -> null`
+            return str
+        }
+    }
+
     return {
         append,
         prepend,
@@ -144,11 +160,24 @@ const LinkedList = () => {
         tail,
         at,
         pop,
-        contains
+        contains,
+        find, 
+        toString
     }
 }
 
+
+// Test scripts
 const testList = LinkedList()
+testList.append(2)
+testList.append(3)
+testList.append(4)
 testList.append(5)
+testList.prepend(9)
+testList.prepend(8)
+testList.prepend(7)
+testList.prepend(6)
+
 
 console.log(testList.size)
+console.log(testList.headNode)
