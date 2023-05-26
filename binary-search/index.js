@@ -27,7 +27,7 @@ const buildTree = (array) => {
     const mid = Math.floor(array.length / 2)
     const root = Node(array[mid])
     const leftSubtree = buildTree(array.slice(0, mid))
-    const rightSubtree = buildTree(array.slice(mid, + 1))
+    const rightSubtree = buildTree(array.slice(mid, - 1))
     root.leftChild = leftSubtree
     root.rightChild = rightSubtree
     return root
@@ -48,5 +48,6 @@ const prettyPrint = (node, prefix = "", isLeft = true) => {
   };
 
   // node test
-let test = Tree([54, 32, 66, 133, 5, 25, 73, 43, 342])
+//let test = Tree([54, 32, 66, 133, 5, 25, 73, 43, 342])
+let test = Tree([1, 2, 3, 4, 5, 6, 7, 8, 9])
 prettyPrint(test.getRoot()) 
