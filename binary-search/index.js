@@ -33,7 +33,7 @@ const buildTree = (array) => {
     return root
 }
 
-
+// Print the tree in the console
 const prettyPrint = (node, prefix = "", isLeft = true) => {
     if (node === null) {
       return;
