@@ -25,6 +25,18 @@ const Tree = (array) => {
 }
     const root = buildTree(array)
     
+    // Insert to add node to array
+    const insertNode = (value, root) => {
+        let node = Node(value)
+        if (!root) {
+            root = node
+            return
+        }
+    }
+
+
+    // Delete to remove node from array TODO
+
     return {
         root,
         buildTree,
