@@ -9,14 +9,10 @@ const Node = (value, leftChild = null, rightChild = null) => {
 // TODO: build a tree factory function which accepts an array when initialized
 // Tree Factory Function
 const Tree = (array) => {
-    const root = buildTree(array)
-    return {
-        getRoot: () => root
-    }
-}
+    
 
-// Function that takes an array and turns it into a balanced BST
-const buildTree = (array) => {
+    // Method that takes an array and turns it into a balanced BST
+    const buildTree = (array) => {
     const sortedArray = array.sort((a, b) => a - b)
     if (sortedArray.length === 0) {
       return null;
@@ -27,6 +23,16 @@ const buildTree = (array) => {
     node.rightChild = buildTree(sortedArray.slice(midIndex + 1));
     return node;
 }
+    const root = buildTree(array)
+    
+    return {
+        getRoot: () => root,
+        buildTree,
+    }
+}
+
+
+
 
 // Print the tree in the console
 const prettyPrint = (node, prefix = "", isLeft = true) => {
