@@ -26,7 +26,7 @@ const Tree = (array) => {
     const root = buildTree(array)
     
     return {
-        getRoot: () => root,
+        root,
         buildTree,
     }
 }
@@ -51,4 +51,4 @@ const prettyPrint = (node, prefix = "", isLeft = true) => {
   // node test
 let test = Tree([54, 32, 66, 133, 5, 25, 73, 43, 342])
 //let test = Tree([1, 2, 3, 4, 5, 6, 7, 8, 9])
-prettyPrint(test.getRoot()) 
+prettyPrint(test.root) 
