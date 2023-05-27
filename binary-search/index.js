@@ -25,12 +25,17 @@ const Tree = (array) => {
 }
     const root = buildTree(array)
     
-    // Insert to add node to array
-    const insertNode = (value, root) => {
-        let node = Node(value)
-        if (!root) {
-            root = node
-            return
+    // Method to add node to array
+    const insertNode = (value, node) => {
+        let newNode = Node(value)
+        if (root === null) {
+            return newNode
+        }
+        // Traverse the tree to find position for the new node
+        let prev = null
+        let pointer = node
+        while (pointer !== null) {
+            
         }
     }
 
@@ -40,6 +45,7 @@ const Tree = (array) => {
     return {
         root,
         buildTree,
+        insertNode
     }
 }
 
@@ -62,5 +68,6 @@ const prettyPrint = (node, prefix = "", isLeft = true) => {
 
   // node test
 let test = Tree([54, 32, 66, 133, 5, 25, 73, 43, 342])
+test.insertNode(44)
 //let test = Tree([1, 2, 3, 4, 5, 6, 7, 8, 9])
 prettyPrint(test.root) 
