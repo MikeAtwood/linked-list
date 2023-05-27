@@ -17,13 +17,14 @@ const Tree = (array) => {
 
 // Function that takes an array and turns it into a balanced BST
 const buildTree = (array) => {
-    if (array.length === 0) {
+    const sortedArray = array.sort((a, b) => a - b)
+    if (sortedArray.length === 0) {
       return null;
     }
-    const midIndex = Math.floor(array.length / 2);
-    const node = Node(array[midIndex]);
-    node.leftChild = buildTree(array.slice(0, midIndex));
-    node.rightChild = buildTree(array.slice(midIndex + 1));
+    const midIndex = Math.floor(sortedArray.length / 2);
+    const node = Node(sortedArray[midIndex]);
+    node.leftChild = buildTree(sortedArray.slice(0, midIndex));
+    node.rightChild = buildTree(sortedArray.slice(midIndex + 1));
     return node;
 }
 
