@@ -57,7 +57,7 @@ const Tree = (array) => {
 
 
     // Delete to remove node from array TODO
-
+    
     return {
         root,
         buildTree,
