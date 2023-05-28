@@ -10,6 +10,7 @@ const Node = (value, leftChild = null, rightChild = null) => {
 // Tree Factory Function
 const Tree = (array) => {
     
+    
 
     // Method that takes an array and turns it into a balanced BST
     const buildTree = (array) => {
@@ -35,8 +36,21 @@ const Tree = (array) => {
         let prev = null
         let pointer = node
         while (pointer !== null) {
-            
+            prev = pointer;
+            if (pointer && value < pointer.value) {
+                pointer = pointer.leftChild
+            } else if (pointer && value > pointer.value) {
+                pointer = pointer.rightChild
+            } else {
+                return node
+            }
         }
+        if (value < prev.value) {
+            prev.leftChild = newNode
+        } else {
+            prev.rightChild = newNode
+        } 
+        return node
     }
 
 
@@ -68,6 +82,7 @@ const prettyPrint = (node, prefix = "", isLeft = true) => {
 
   // node test
 let test = Tree([54, 32, 66, 133, 5, 25, 73, 43, 342])
-test.insertNode(44)
+root = insertNode(44, root)
 //let test = Tree([1, 2, 3, 4, 5, 6, 7, 8, 9])
-prettyPrint(test.root) 
+prettyPrint(test.root)
+prettyPrint(root) 
